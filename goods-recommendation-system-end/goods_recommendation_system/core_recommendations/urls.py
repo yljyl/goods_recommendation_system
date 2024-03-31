@@ -1,4 +1,6 @@
 from django.urls import path
+from goods_recommendation_system import settings
+from django.conf.urls.static import static
 # from .view import *
 from core_recommendations.views.member import *
 from core_recommendations.views.category import *
@@ -157,4 +159,4 @@ urlpatterns = [
 
     # 词云分析
     path('front/wordcloud', WordCloudView.as_view(), name="front_wordcloud"),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -241,3 +241,4 @@ class BannerSerializer(serializers.ModelSerializer):
 
     def get_indexRadio(self, obj):
         return obj.index_radio
+

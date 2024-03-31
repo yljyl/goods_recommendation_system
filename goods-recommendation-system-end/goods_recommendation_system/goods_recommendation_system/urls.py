@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
 from django.conf.urls.static import static
+from django.urls import path, include
 from django.views.static import serve
 from goods_recommendation_system import settings
 
 urlpatterns = [
     # path('路径', 该路径请求时调用的类，)
+    path('admin/', admin.site.urls),
     path('user/', include('user_management.urls')),
     path('core/', include('core_recommendations.urls')),
 

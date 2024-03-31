@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import *
+from django.conf.urls.static import static
+from goods_recommendation_system import settings
 from user_management.base.dict import *
 from user_management.base.file import *
 from user_management.base.login import *
@@ -41,4 +42,4 @@ urlpatterns = [
     path('notice/page', NoticePageView.as_view(), name="notice_page"),
     path('notice/del/batch', NoticeBatchDeleteAPIView.as_view(), name="notice_batch_delete"),
     path('notice/export', NoticeExport.as_view(), name="notice_export"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
